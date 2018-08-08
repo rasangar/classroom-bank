@@ -1,0 +1,31 @@
+<%= form_for [@classbank, @account_setup] do |f| %>
+
+  <div class="field">
+    <%= f.label :first_name, 'First Name' %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, 'Last Name' %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, 'Email' %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :balance, 'Initial Balance' %><br />
+    <%= f.number_field :balance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :allowance, 'Allowance' %><br />
+    <%= f.number_field :allowance %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Add Student Bank Account'%>
+  </div>
+<% end %>
