@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_08_07_184810) do
   enable_extension "plpgsql"
 
   create_table "classbanks", force: :cascade do |t|
-    t.string "classname", null: false
+    t.string "name", null: false
     t.bigint "teacher_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
