@@ -2,8 +2,12 @@ class ClassbanksController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_teacher
   def index
+
+    @name = current_user.first_name
+    @classbanks = current_user.current_classbanks
   end
   def show
+
   end
   def new
     @classbank = Classbank.new
