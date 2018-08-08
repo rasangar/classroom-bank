@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_07_184810) do
+ActiveRecord::Schema.define(version: 2018_08_08_173741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bank_accounts", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "classbank_id", null: false
+    t.decimal "balance", precision: 19, scale: 2, default: "0.0", null: false
+    t.decimal "allowance", precision: 19, scale: 2, default: "0.0"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["classbank_id"], name: "index_bank_accounts_on_classbank_id"
+    t.index ["student_id"], name: "index_bank_accounts_on_student_id"
+  end
 
   create_table "classbanks", force: :cascade do |t|
     t.string "name", null: false

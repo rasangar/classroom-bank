@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   has_many :current_classbanks, foreign_key:"teacher_id", class_name:"Classbank"
+  has_one :bank_account, foreign_key:"student_id", class_name:"BankAccount"
 end
