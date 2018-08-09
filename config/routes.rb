@@ -9,4 +9,10 @@ Rails.application.routes.draw do
     resources :account_setups, only:[:create]
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :classbanks, only:[:index, :show]
+    end
+  end
+
 end

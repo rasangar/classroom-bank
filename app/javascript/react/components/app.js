@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import NavBar from './NavBar';
+import ClassbanksIndexContainer from '../containers/ClassbanksIndexContainer'
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
-}
+  return (
+    <Router history={browserHistory}>
+      <Route path='/' component={NavBar}>
+        <IndexRoute component={ClassbanksIndexContainer} />
 
-export default App
+      </Route>
+    </Router>
+  );
+};
+
+export default App;
+
+
+// <Route path='/classbanks' component={ClassbanksIndexContainer} />
