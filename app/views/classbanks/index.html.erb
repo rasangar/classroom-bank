@@ -1,11 +1,13 @@
-<h2> <%= @name %>'s Classbanks</h2>
+<div class="">
+  <h2> <%= @name %>'s Classbanks</h2>
 
-<div class="column rows">
-  <% if @classbanks %>
+  <div class="column rows classbank-outline magic">
+    <% if @classbanks %>
     <% @classbanks.each do |classbank| %>
-      <div>
-        <%= link_to classbank.name, classbank %>
-      </div>
+    <div>
+      <%= link_to classbank.name, classbank %>
+    </div>
     <% end  %>
-  <% end  %>
+    <% end  %>
+  </div>
 </div>
