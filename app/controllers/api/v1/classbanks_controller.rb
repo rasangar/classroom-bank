@@ -11,6 +11,15 @@ class Api::V1::ClassbanksController < ApplicationController
     render json: result
   end
 
+  def show
+    @classbank = Classbank.find(params[:id])
+    @students = @classbank.students
+    @bank_accounts = @classbank.bank_accounts
+
+    @combined = @students.zip(@bank_accounts)
+    render json: {classbank: @classbank, combine: @combined}
+  end
+
   protected
   def authenticate_teacher
     if !current_user || current_user.role != 'teacher'

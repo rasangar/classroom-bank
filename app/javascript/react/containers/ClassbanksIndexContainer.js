@@ -12,7 +12,6 @@ class ClassbanksIndexContainer extends Component {
 
   // fetch the classbanks for this specific teacher
    componentDidMount() {
-     console.log("top of fetch")
     fetch('/api/v1/classbanks', {
       credentials: "same-origin"
     })
