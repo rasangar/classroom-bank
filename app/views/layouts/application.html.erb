@@ -20,6 +20,12 @@
 
     <section class="top-bar-section">
       <ul class="right">
+        <%- if current_user.role == 'teacher' -%>
+          <li><%= link_to 'Classbanks', classbanks_path %></li>
+          <li><%= link_to 'My Profile', '/'%></li>
+        <%- else -%>
+          <li><%= link_to 'My Profile', '/' %></li>
+        <%- end -%>
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>

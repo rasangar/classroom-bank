@@ -1,3 +1,5 @@
+<div id="app"></div>
+
 <h1> <%= @classbank.name %> </h1>
 
 <div class="">
@@ -15,6 +17,7 @@
   <% end %>
 </div>
 
-<div class="">
+<div class="columns rows">
+    <h3>Add New Bank Account</h3>
     <%= render "bank_accounts/bank_account_form" %>
 </div>

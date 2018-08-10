@@ -25,6 +25,9 @@ class ClassbanksController < ApplicationController
     @teacher = current_user
     @classbank.teacher = @teacher
     @classbank.name = params[:classbank][:name]
+    if @classbank.save
+      redirect_to classbanks_path
+    end
   end
 
   protected

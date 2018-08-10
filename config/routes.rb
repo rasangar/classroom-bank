@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'classbanks#index'
+  # root 'classbanks#index'
+  root 'profiles#show'
   devise_for :users, :controllers => { :registrations => :registrations }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :classbanks, except: [:show]
@@ -9,9 +10,12 @@ Rails.application.routes.draw do
     resources :account_setups, only:[:create]
   end
 
+  resources :profiles, only: [:index,:show]
+
   namespace :api do
     namespace :v1 do
       resources :classbanks, only:[:index, :show]
+      resources :profiles, only:[:index]
     end
   end
 

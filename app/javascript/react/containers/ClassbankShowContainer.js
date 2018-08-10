@@ -30,7 +30,7 @@ class ClassbankShowContainer extends Component {
       this.setState({
         name: body.classbank.name,
         id: this.props.params.classbank_id,
-        bankAccountsArray: body.combine,
+        bankAccountsArray: body.combine
       });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -52,6 +52,7 @@ class ClassbankShowContainer extends Component {
     })
     return (
       <div>
+        <h3>{this.state.name}</h3>
         {bankAccounts}
       </div>
     )
