@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :profiles, only: [:index,:show]
+  resources :transactions, only:[:new, :create]
 
   namespace :api do
     namespace :v1 do

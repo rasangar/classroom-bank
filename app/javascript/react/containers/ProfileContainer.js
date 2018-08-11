@@ -64,7 +64,9 @@ class ProfileContainer extends Component {
         email = {this.state.email}
         allowance = {this.state.allowance}
         balance = {this.state.balance}
+        role = {this.state.role}
         />
+
       </div>
     )
   }
