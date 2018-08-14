@@ -39,20 +39,20 @@ class ClassbanksIndexContainer extends Component {
   render(){
     let classbanks = this.state.classbanksArray.map(classbank => {
       return (
-        <ClassbankListTile
-          key = {classbank.id}
+        <div className="field" key = {classbank.id}>
+          <ClassbankListTile
           id = {classbank.id}
           name = {classbank.name}
-        />
+          />
+        </div>
       )
     })
-    console.log("render")
-    console.log(this.state)
+      let title = `${this.state.teacher.first_name}'s Classbanks`
       return(
-        <div>
-          <div>
-            {this.state.teacher.first_name}'s Classbanks
-          </div>
+        <div className="row small-10 medium-6">
+          <h3 className="field">
+            {title}
+          </h3>
           <div>
             {classbanks}
           </div>

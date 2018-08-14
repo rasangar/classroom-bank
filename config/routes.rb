@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :classbanks, only:[:index, :show]
+      resources :classbanks, only:[:index, :show] do
+        resources :account_setups, only:[:create]
+      end
       resources :profiles, only:[:index]
     end
   end

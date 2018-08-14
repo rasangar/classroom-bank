@@ -1,0 +1,52 @@
+
+.translucent-form-overlay {
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(138, 138, 138, 0.6);
+  color: #fefefe;
+  padding: 3%;
+  border: 4px solid #7D6484;
+  border-radius: 20px;
+}
+
+.translucent-form-overlay .columns.row {
+  display: block;
+}
+
+.translucent-form-overlay div, .translucent-form-overlay label {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input, .translucent-form-overlay select {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::-webkit-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input:-ms-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::placeholder {
+  color: #8a8a8a;
+}
+
+.field {
+  background-color: rgba(200, 163, 204, 0.8);
+  padding: 3%;
+  border: 4px solid #7D6484;
+  border-radius: 20px;
+  margin: 4% auto;
+  position: relative;
+}
+
+#bank-account-form {
+  background-color: rgba(200, 163, 204, 0.8);
+  padding: 3%;
+  border: 4px solid #7D6484;
+  border-radius: 20px;
+  margin: 4% auto;
+  position: relative;
+}

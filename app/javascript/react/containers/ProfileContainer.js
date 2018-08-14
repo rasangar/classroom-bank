@@ -57,7 +57,7 @@ class ProfileContainer extends Component {
   render(){
 
     return (
-      <div>
+      <div className="row small-10 medium-6 field">
         <ProfileTile
         first_name = {this.state.first_name}
         last_name = {this.state.last_name}
@@ -66,7 +66,6 @@ class ProfileContainer extends Component {
         balance = {this.state.balance}
         role = {this.state.role}
         />
-
       </div>
     )
   }

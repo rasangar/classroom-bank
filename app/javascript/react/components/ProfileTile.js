@@ -17,18 +17,18 @@ const ProfileTile = (props) => {
 
   return(
     <div>
-      <div>
+      <h3>
         {name}
-      </div>
-      <div>
+      </h3>
+      <h4>
         Email: {props.email}
-      </div>
-      <div>
+      </h4>
+      <h4>
         {balance}
-      </div>
-      <div>
+      </h4>
+      <h4>
         {allowance}
-      </div>
+      </h4>
       {button}
     </div>
   )

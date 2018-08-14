@@ -3,5 +3,5 @@ class BankAccount < ApplicationRecord
 
   belongs_to :student, class_name:"User"
   belongs_to :classbank
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
 end
