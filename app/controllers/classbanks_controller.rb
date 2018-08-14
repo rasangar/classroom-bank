@@ -5,13 +5,12 @@ class ClassbanksController < ApplicationController
   def index
     @name = current_user.first_name
     @classbanks = current_user.current_classbanks
+    @classbank = Classbank.new
   end
 
   def show
     @classbank = Classbank.find(params[:id])
-
     @students = @classbank.students
-
     # testing single wrapper for form
     @account_setup = AccountSetup.new
   end

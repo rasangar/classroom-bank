@@ -1,10 +1,21 @@
-<%= form_for(@classbank) do |f| %>
-  <div class="field">
-    <%= f.label :name, 'Class Name' %><br />
-    <%= f.text_field :name %>
-  </div>
+<div class="row site-background ">
+ <div class="columns small-0 medium-4 ">
 
-  <div class="actions">
-    <%= f.submit 'Add Classbank'%>
-  </div>
-<% end %>
+ </div>
+ <div class="columns small-12 medium-6 translucent-form-overlay">
+   <%= form_for(@classbank) do |f| %>
+   <div class="field translucent-form-overlay">
+     <%= f.label :name, 'Class Name'  %><br />
+     <%= f.text_field :name %>
+
+   </div>
+
+   <div class="actions translucent-form-overlay">
+     <%= f.submit 'Add Classbank'%>
+   </div>
+   <% end %>
+ </div>
+ <div class="columns small-0 medium-4 ">
+
+ </div>
+</div>

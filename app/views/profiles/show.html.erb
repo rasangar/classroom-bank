@@ -1,15 +1,5 @@
 <div id="app" ></div>
 
-<div class="rows profile-page">
-  <h1 class="page-title user-profile"> <%= @user.first_name %>'s Profile </h1>
-  <div class="columns rows">
-    <div class="profile-info columns medium-8">
-      <h4>Full Name: <%= @user.first_name %> <%= @user.last_name %></h4>
-      <h4>Email: <%= @user.email %></h4>
-    </div>
-  </div>
-</div>
-
 <div class="rows columns edit-profile-click ">
   <%= link_to 'Edit Profile', edit_user_registration_path(current_user), class: "submit-button"%>
 </div>
