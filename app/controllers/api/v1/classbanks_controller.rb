@@ -17,7 +17,21 @@ class Api::V1::ClassbanksController < ApplicationController
     @bank_accounts = @classbank.bank_accounts
 
     @combined = @students.zip(@bank_accounts)
+
     render json: {classbank: @classbank, combine: @combined}
+  end
+
+  def create
+    @classbank = Classbank.new
+    @classbank.teacher_id = params[:teacher_id]
+    @classbank.name = params[:name]
+    @classbank.allowance_freq = params[:allowance_freq]
+    @classbank.interest_rate = params[:interest_rate]
+    if @classbank.save
+      render json: Classbank.where(teacher_id:params[:teacher_id])
+    else
+      render :new
+    end
   end
 
   protected

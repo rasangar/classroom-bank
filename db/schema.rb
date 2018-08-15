@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_10_170528) do
+ActiveRecord::Schema.define(version: 2018_08_14_194356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_08_10_170528) do
     t.bigint "teacher_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "allowance_freq", null: false
+    t.string "interest_rate", null: false
     t.index ["teacher_id"], name: "index_classbanks_on_teacher_id"
   end
 
