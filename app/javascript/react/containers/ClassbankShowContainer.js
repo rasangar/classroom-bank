@@ -61,53 +61,42 @@ class ClassbankShowContainer extends Component {
         allowance:''
       })
     }
+
     handleBankAccountFormSubmit(event){
-
       event.preventDefault();
-
-      // if (this.formIsValid()) {
-        let bankAccountData = new FormData();
-        bankAccountData.append("first_name", this.state.first_name);
-        bankAccountData.append("last_name", this.state.last_name);
-        bankAccountData.append("email", this.state.email);
-        bankAccountData.append("balance", this.state.balance);
-        bankAccountData.append("allowance", this.state.allowance);
-        bankAccountData.append("classbank_id", this.state.id)
-        this.clearForm(event);
-        this.submitBankAccount(bankAccountData);
-      // }
-
+      let bankAccountData = new FormData();
+      bankAccountData.append("first_name", this.state.first_name);
+      bankAccountData.append("last_name", this.state.last_name);
+      bankAccountData.append("email", this.state.email);
+      bankAccountData.append("balance", this.state.balance);
+      bankAccountData.append("allowance", this.state.allowance);
+      bankAccountData.append("classbank_id", this.state.id)
+      this.clearForm(event);
+      this.submitBankAccount(bankAccountData);
     }
 
     submitBankAccount(data){
-      console.log('before the fetch')
       fetch(`/api/v1/classbanks/${this.state.id}/account_setups`,{
         method: 'POST',
         credentials: 'same-origin',
         body: data
       }).then(response => {response
-        console.log('first then')
-        console.log(response)
         if (response.ok) {
         return response;
       } else {
         throw(response);
       }
       }).then(response => {
-        console.log('second then')
-        console.log(response)
         return response.json();
       }).then(parsedBody => {
-      this.setState({notices: {notice: "Student added successfully!"}});
+      this.setState({
+        notices: {notice: "Student added successfully!"},
+        bankAccountsArray: parsedBody.combine
+      });
       })
       .catch(error => {
         console.error(`Error in fetch`);
-        return error.json();
-      }).then(errorData => {
-        if (errorData.errorList) {
-           this.setState({ errors: Object.assign(this.state.errors, errorData.errorList) });
-         }
-     });
+      })
     }
 
     handleFirstNameUpdate(event){
@@ -152,8 +141,8 @@ class ClassbankShowContainer extends Component {
     })
     return (
       <div className="">
-        <div className="row medium-10 ">
-          <h3 className="column medium-12 field align-center">
+        <div className="row medium-10">
+          <h3 className="column small-12 medium-8 field text-center">
             {this.state.name}
           </h3>
           <div className="row medium-10 ">

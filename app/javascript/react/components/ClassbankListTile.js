@@ -5,9 +5,11 @@ const ClassbankListTile = (props) => {
 
   return(
     <div>
-      <div className='index-classbank-link'>
-        <Link to={`/classbanks/${props.id}`}>{props.name}</Link>
-      </div>
+      <Link to={`/classbanks/${props.id}`}>
+        <div className='index-classbank-link'>
+          {props.name}
+        </div>
+      </Link>
     </div>
   )
 }

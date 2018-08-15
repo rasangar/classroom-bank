@@ -40,11 +40,15 @@ students = User.create([
 classbanks = Classbank.create([
   {
     name: "Rahul's First Classbank",
-    teacher: User.first
+    teacher: User.first,
+    allowance_freq: "weekly",
+    interest_rate: 0.05
   },
   {
-    name: "Heather's First Classbank",
-    teacher: User.second
+    name: "Rahul's Second Classbank",
+    teacher: User.first,
+    allowance_freq: "monthly",
+    interest_rate: 0.1
   }
 ])
 
@@ -52,12 +56,14 @@ bank_accounts = BankAccount.create([
   {
     student: User.third,
     classbank: Classbank.first,
-    balance: 150
+    balance: 150,
+    allowance: 100
   },
   {
     student: User.fourth,
     classbank: Classbank.first,
-    balance: 30
+    balance: 30,
+    allowance: 100
   }
 ])
 
