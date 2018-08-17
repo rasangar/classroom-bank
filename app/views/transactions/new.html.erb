@@ -1,15 +1,16 @@
 <%= form_for(@transaction) do |f| %>
+  <div class="row small-12 medium-4 translucent-form-overlay">
+    <div class="field">
+      <%= f.label :type_of_transaction, 'Type of Transaction' %>
+      <%= select_tag(:type_of_transaction, options_for_select([['Deposit', 1], ['Withdrawal', 2]])) %>
+    </div>
 
-  <div class="field">
-    <%= f.label :type_of_transaction, 'Type of Transaction' %>
-    <%= select_tag(:type_of_transaction, options_for_select([['Deposit', 1], ['Withdrawal', 2]])) %>
-  </div>
-
-  <div class="field">
-    <%= f.label :amount, 'Amount' %>
-    <%= f.number_field(:amount) %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Submit'%>
+    <div class="field">
+      <%= f.label :amount, 'Amount' %>
+      <%= f.number_field(number_with_precision(:amount, precision:2)) %>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="button-med button-font-lrg button">Submit Transaction</button>
+    </div>
   </div>
 <% end %>

@@ -4,7 +4,6 @@ namespace :payday do
   task allowance: :environment do
     classbanks = Classbank.all
     today = Date.current
-
     classbanks.each do |classbank|
       last_updated = classbank.updated_at
       interest = 1 + classbank.interest_rate.to_f

@@ -128,21 +128,23 @@ class ClassbankShowContainer extends Component {
     let bankAccounts = this.state.bankAccountsArray.map(bankAccount => {
       return (
         <div className="bank-account-wrapper" key={bankAccount[1].id}>
-          <BankAccountListTile
-            id={bankAccount[1].id}
-            balance={bankAccount[1].balance}
-            allowance={bankAccount[1].allowance}
-            email={bankAccount[0].email}
-            first_name={bankAccount[0].first_name}
-            last_name={bankAccount[0].last_name}
-          />
+          <strong>
+            <BankAccountListTile
+              id={bankAccount[1].id}
+              balance={bankAccount[1].balance}
+              allowance={bankAccount[1].allowance}
+              email={bankAccount[0].email}
+              first_name={bankAccount[0].first_name}
+              last_name={bankAccount[0].last_name}
+            />
+          </strong>
         </div>
       )
     })
     return (
       <div className="">
         <div className="row medium-10">
-          <h3 className="column small-12 medium-8 field text-center">
+          <h3 className="column small-12 medium-8 field text-center title">
             {this.state.name}
           </h3>
           <div className="row medium-10 ">
@@ -150,7 +152,7 @@ class ClassbankShowContainer extends Component {
             {bankAccounts}
             </div>
             <div className="column medium-6 translucent-form-overlay">
-              <h3 className="field">`Add a new Bank Account`</h3>
+              <h3 className="field title-size text-center">New Bank Account</h3>
               <form className='form' id='bank-account-form' onSubmit={this.handleBankAccountFormSubmit}>
                 <TextField
                   label='First Name'
@@ -182,8 +184,9 @@ class ClassbankShowContainer extends Component {
                   handlerFunction={this.handleAllowanceUpdate}
                   value={this.state.allowance}
                 />
-
-                <input type="submit" className="submit-button" value="Add Bank Account" />
+                <div className="text-center">
+                  <button type="submit" className="button-med button-font-lrg button">Add New Bank Account</button>
+                </div>
               </form>
             </div>
           </div>

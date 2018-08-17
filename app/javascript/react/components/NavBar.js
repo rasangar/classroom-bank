@@ -10,7 +10,6 @@ class NavBar extends Component{
   render(){
     return(
       <div>
-        <BackButton />
         <div className='content'>
           {this.props.children}
         </div>

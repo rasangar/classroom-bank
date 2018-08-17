@@ -1,6 +1,10 @@
-<div class="translucent-form-overlay ">
-<h1>Welcome to Boollion!</h1>
-<h2>Please Log In</h2>
+<div class="row translucent-form-overlay text-center small-12 medium-6">
+<div class="field medium-8">
+  <strong>
+    <h1>Welcome to Boollion!</h1>
+  </strong>
+  <h2>Please Log In</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -21,9 +25,10 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <button type="submit" class="button-med button-font-lrg button">Log in</button>
   </div>
 <% end %>
+<div class="field text-center small-5">
+  <%= render "devise/shared/links" %>
 </div>
-
-<%= render "devise/shared/links" %>
+</div>

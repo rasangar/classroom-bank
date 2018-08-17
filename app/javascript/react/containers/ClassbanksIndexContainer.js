@@ -119,16 +119,16 @@ class ClassbanksIndexContainer extends Component {
     })
       let title = `${this.state.teacher.first_name}'s Classbanks`
       return(
-        <div className="row small-10 medium-6">
-          <h3 className="field text-center">
+        <div className="row small-10 medium-12">
+          <h3 className="field text-center medium-8 title">
             {title}
           </h3>
-          <div>
+          <div className="columns medium-6 field-classbank ">
             {classbanks}
           </div>
 
-          <div className="column medium-12 translucent-form-overlay">
-            <h3 className="field text-center">Add a New Classbank</h3>
+          <div className="column small-12 medium-6 translucent-form-overlay">
+            <h3 className="field title-size text-center">Add a New Classbank</h3>
             <form className='form' id='classbank-form' onSubmit={this.handleClassbankFormSubmit}>
               <TextField
                 label='Classbank Name'
@@ -148,8 +148,9 @@ class ClassbanksIndexContainer extends Component {
                 handlerFunction={this.handleAllowanceFreqUpdate}
                 value={this.state.allowance_freq}
               />
-
-              <input type="submit" className="submit-button" value="Add Classbank" />
+              <div className="text-center">
+                <button type="submit" className="button-med button-font-lrg button">Add New Classbank</button>
+              </div>
             </form>
           </div>
         </div>
