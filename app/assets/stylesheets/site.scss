@@ -6,11 +6,11 @@
   background-size: cover;;
 }
 
-.navbar {
+/* .navbar {
   background-color: rgba(141, 186, 204, 0.9);
   border: 4px solid #8dbacc;
   height: 55px;
-}
+} */
 
 
 .bank-account-wrapper{
@@ -27,12 +27,42 @@
   align-content: center;
 }
 
-.center-div
-{
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+
+.hidden{
+  display:none;
+}
+
+.show{
+  display:block;
+}
+
+.button{
+  border: 4px solid #7D6484;
+  border-radius: 20px;
+  margin: 4% auto;
+  background-color: #8dbacc;
+}
+
+label{
+  font-size: 1.7em;
+  color: #fffff;
+}
+
+.field-classbank{
+  font-size: 1.8em;
+}
+
+.title{
+  font-size: 2.5em;
+}
+
+.top-bar-section ul li > a{
+  font-size: 1.5em;
+}
+
+
+strong > div{
+    font-size: 1.5em;
+    padding-left: 1.1em;
+    padding-top:1.1em;
 }

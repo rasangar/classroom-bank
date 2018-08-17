@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # root 'classbanks#index'
+  # root 'welcome#index'
   root 'profiles#show'
   devise_for :users, :controllers => { :registrations => :registrations }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

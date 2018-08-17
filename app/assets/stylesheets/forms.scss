@@ -5,7 +5,7 @@
   background-color: rgba(138, 138, 138, 0.6);
   color: #fefefe;
   padding: 3%;
-  border: 4px solid #7D6484;
+  border: 4px solid #663344;
   border-radius: 20px;
 }
 
@@ -13,9 +13,9 @@
   display: block;
 }
 
-.translucent-form-overlay div, .translucent-form-overlay label {
-  color: #8a8a8a;
-}
+// .translucent-form-overlay div, .translucent-form-overlay label {
+//   color: #8a8a8a;
+// }
 
 .translucent-form-overlay input, .translucent-form-overlay select {
   color: #8a8a8a;
@@ -36,7 +36,7 @@
 .field {
   background-color: rgba(200, 163, 204, 0.8);
   padding: 3%;
-  border: 4px solid #7D6484;
+  border: 4px solid #663344;
   border-radius: 20px;
   margin: 4% auto;
   position: relative;
@@ -45,8 +45,17 @@
 #bank-account-form {
   background-color: rgba(200, 163, 204, 0.8);
   padding: 3%;
-  border: 4px solid #7D6484;
+  border: 4px solid #663344;
   border-radius: 20px;
   margin: 4% auto;
   position: relative;
+}
+
+.alert-box {
+  background-color: #336655 !important;
+  border: 2px solid #663344 !important;
+  color: #fffff !important;
+  font-weight: bold;
+  font-size: 4em;
+  border-radius: 4px !important;
 }
